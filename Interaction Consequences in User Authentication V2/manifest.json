@@ -1,0 +1,33 @@
+{
+  "name": "Consequences in User Authentication",
+  "version": "0.0.2",
+  "manifest_version": 2,
+
+  "description": "Interaction Consequences in User Authentication",
+  "icons": {
+    "128": "images/my-logo.png"
+  },
+  "browser_action": {
+    "default_icon": "images/my-logo.png",
+    "default_popup": "download.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "web_accessible_resources": [
+    "images/warning.jpg", "images/authLogo.jpg", "images/authLogoGray.jpg", "popup.html", "implicationPopup.html", "diary.html"
+  ],
+  "content_scripts": [{
+    "matches": [ "<all_urls>"],
+    "js": ["content.js", "implication.js"],
+    "css": ["styles.css"]
+  }],
+
+  "permissions": ["tabs","activeTab", "storage", "management", "notifications", "downloads"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "Authentication@sybil.com"
+    }
+  }
+}

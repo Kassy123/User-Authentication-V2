@@ -1,0 +1,33 @@
+body{
+    background-color: #e5e5e5;
+}
+
+.download-modal {
+    display: block;
+    width: 150px;
+    padding: 10px;
+    
+}
+
+.modal-header{
+   display: flex;
+   height: 40px;
+}
+
+.logo-icon{
+    width: auto;
+    margin-right: 10px;
+}
+
+.title{
+    color: #8B0000;
+    font-size: 20px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.downloadButton{
+background-color: #8B0000;
+color: #e5e5e5;
+}

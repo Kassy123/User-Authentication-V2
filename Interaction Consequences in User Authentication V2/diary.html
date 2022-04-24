@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<div id="diary-modal" class="diary-modal">
+    <div class="diary-content">
+        <div class="diary-header">
+            <img class="logo-icon" id="authlogoGray"></img>
+            <h1 class="diary-title">
+                Questions to the system notification
+            </h1>
+            <span id="closeDiary">&times;</span>
+        </div>
+        <div class="diary-main-content" >             
+            <div id="lastQuestion" class="lastQuestion">
+                <p id="relevanceQuestion" class="rateText">Please rate the following statements:</p>
+                <div id="statement" class="statement">
+                    <div id="relevance" name="relevance">
+                    <div id="likertResponses">
+                        <table class="likertRow">
+                            <tr class="selection">
+                                <th class="questionStyle"></th>
+                                <th class="tableStyle">strongly disagree</th>
+                                <th class="tableStyle"></th>
+                                <th class="tableStyle"></th>
+                                <th class="tableStyle">neutral</th>
+                                <th class="tableStyle"></th>
+                                <th class="tableStyle"></th>
+                                <th class="tableStyle">strongly agree</th>
+                            </tr>
+                            <tr class="firstStatement">
+                                <th class="questionStatement questionLikert"><p>I find the displayed notifications relevant</p></th>
+                                <th class="questionLikert"><input class="radioButton relevance1" id="relevance1" type="radio" name="relevant" value="1" /></th>
+                                <th class="questionLikert"><input class="radioButton relevance2" id="relevance2" type="radio" name="relevant" value="2" /></th>
+                                <th class="questionLikert"><input class="radioButton relevance3" id="relevance3" type="radio" name="relevant" value="3" /></th>
+                                <th class="questionLikert"><input class="radioButton relevance4" id="relevance4" type="radio" name="relevant" value="4" /></th>
+                                <th class="questionLikert"><input class="radioButton relevance5" id="relevance5" type="radio" name="relevant" value="5" /></th>
+                                <th class="questionLikert"><input class="radioButton relevance6" id="relevance6"type="radio" name="relevant" value="6" /></th>
+                                <th class="questionLikert"><input class="radioButton relevance7" id="relevance7" type="radio" name="relevant" value="7" /></th>
+                            </tr>
+                            <tr class="secondStatement"> 
+                                <th class="questionStatement questionLikert"><p>The message make me feel worried about my privacy choice</p></th>
+                                <th class="questionLikert"><input class="radioButton concern1" id="concern1" type="radio" name="concern" value="1" /></th>
+                                <th class="questionLikert"><input class="radioButton concern2" id="concern2" type="radio" name="concern" value="2" /></th>
+                                <th class="questionLikert"><input class="radioButton concern3" id="concern3" type="radio" name="concern" value="3" /></th>
+                                <th class="questionLikert"><input class="radioButton concern4" id="concern4" type="radio" name="concern" value="4" /></th>
+                                <th class="questionLikert"><input class="radioButton concern5" id="concern5" type="radio" name="concern" value="5" /></th>
+                                <th class="questionLikert"><input class="radioButton concern6" id="concern6"type="radio" name="concern" value="6" /></th>
+                                <th class="questionLikert"><input class="radioButton concern7" id="concern7" type="radio" name="concern" value="7" /></th>
+                            </tr>
+                            <tr class="thirdStatement">
+                                <th class="questionStatement questionLikert"><p>I will pay more attention to login security in the future</p></th>
+                                <th class="questionLikert"><input class="radioButton attention1" id="attention1" type="radio" name="attention" value="1" /></th>
+                                <th class="questionLikert"><input class="radioButton attention2" id="attention2" type="radio" name="attention" value="2" /></th>
+                                <th class="questionLikert"><input class="radioButton attention3" id="attention3" type="radio" name="attention" value="3" /></th>
+                                <th class="questionLikert"><input class="radioButton attention4" id="attention4" type="radio" name="attention" value="4" /></th>
+                                <th class="questionLikert"><input class="radioButton attention5" id="attention5" type="radio" name="attention" value="5" /></th>
+                                <th class="questionLikert"><input class="radioButton attention6" id="attention6"type="radio" name="attention" value="6" /></th>
+                                <th class="questionLikert"><input class="radioButton attention7" id="attention7" type="radio" name="attention" value="7" /></th>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="diary-text reactionMessage">
+                <p class="small-padding normal-text">How did you react to the system notification?</p>
+                <textarea rows="6" cols="50" name="changeExplanation" id="reaction" class="textarea"></textarea>
+            </div>
+            <button id="submitDiary" class="send-button">Abschicken</button>
+        </div>
+    </div>
+</div>
