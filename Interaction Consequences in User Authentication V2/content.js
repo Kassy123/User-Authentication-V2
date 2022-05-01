@@ -99,6 +99,90 @@ window.browser = (function() {
    
             /**safe diary input */
             let submitButton = document.getElementById("submitDiary");
+            submitButton.onclick = function (){
+                showDiary=0;
+                div.style.display = "none";
+
+                let showedReaction = document.getElementById("reaction");
+                reactionAnswer = showedReaction.value
+
+                let relevance1 = document.getElementById("relevance1");
+                let relevance2 = document.getElementById("relevance2");
+                let relevance3 = document.getElementById("relevance3");
+                let relevance4 = document.getElementById("relevance4");
+                let relevance5 = document.getElementById("relevance5");
+                let relevance6 = document.getElementById("relevance6");
+                let relevance7 = document.getElementById("relevance7");
+
+                let concern1 = document.getElementById("concern1");
+                let concern2 = document.getElementById("concern2");
+                let concern3 = document.getElementById("concern3");
+                let concern4 = document.getElementById("concern4");
+                let concern5 = document.getElementById("concern5");
+                let concern6 = document.getElementById("concern6");
+                let concern7 = document.getElementById("concern7");
+
+                let attention1 = document.getElementById("attention1");
+                let attention2 = document.getElementById("attention2");
+                let attention3 = document.getElementById("attention3");
+                let attention4 = document.getElementById("attention4");
+                let attention5 = document.getElementById("attention5");
+                let attention6 = document.getElementById("attention6");
+                let attention7 = document.getElementById("attention7");
+                
+                let privacyRelevance = 0;
+                if(relevance1.checked){ 
+                    privacyRelevance = relevance1.value;
+                } else if(relevance2.checked){
+                    privacyRelevance = relevance2.value;
+                } else if(relevance3.checked){
+                    privacyRelevance = relevance3.value;
+                } else if(relevance4.checked){
+                    privacyRelevance = relevance4.value;
+                } else if(relevance5.checked){
+                    privacyRelevance = relevance5.value;
+                } else if(relevance6.checked){
+                    privacyRelevance = relevance6.value;
+                } else if(relevance7.checked){
+                    privacyRelevance = relevance7.value;
+                }
+
+                let privacyConcern = 0;
+                if(concern1.checked){
+                    privacyConcern = concern1.value;
+                } else if(concern2.checked){
+                    privacyConcern = concern2.value;
+                }else if(concern3.checked){
+                    privacyConcern = concern3.value;
+                }else if(concern4.checked){
+                    privacyConcern = concern4.value;
+                }else if(concern5.checked){
+                    privacyConcern = concern5.value;
+                }else if(concern6.checked){
+                    privacyConcern = concern6.value;
+                }else if(concern7.checked){
+                    privacyConcern = concern7.value;
+                }
+
+                let privacyAttention = 0;
+                if(attention1.checked){
+                    privacyAttention = attention1.value;
+                } else if(attention2.checked){
+                    privacyAttention = attention2.value;
+                }else if(attention3.checked){
+                    privacyAttention = attention3.value;
+                }else if(attention4.checked){
+                    privacyAttention = attention4.value;
+                }else if(attention5.checked){
+                    privacyAttention = attention5.value;
+                }else if(attention6.checked){
+                    privacyAttention = attention6.value;
+                }else if(attention7.checked){
+                    privacyAttention = attention7.value;
+                }
+                sendDiaryToBackground(privacyRelevance, privacyConcern, privacyAttention, reactionAnswer);
+            
+            }
             submitButton.addEventListener("click", function(){
                 showDiary=0;
                 div.style.display = "none";
