@@ -521,7 +521,7 @@ function keystrokeCheck(){
     window.browser.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) { 
         if (changeInfo.status == 'complete') {  
             window.browser.tabs.query({active: true, currentWindow: true}, function(tabs) {
-                if(implicationCounter == 0){
+                if(implicationCounter == 10){
                     implicationCounter = 0;
                     window.browser.tabs.query({active: true, currentWindow: true}, function(tabs) {
                         window.browser.tabs.sendMessage(tabs[0].id, {
