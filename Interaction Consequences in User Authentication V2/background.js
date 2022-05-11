@@ -160,6 +160,7 @@ window.browser.runtime.onMessage.addListener(async function(msg,sender,sendRespo
         }
         else if(oldTabURL != currentURL){
             implicationCounter = implicationCounter+1;
+            localStorage.setItem('ImplicationCounter', implicationCounter);
             callAlert(headtext, firstText, secondText);
             oldTabURL = currentURL;
             oldTabName = tabName;
@@ -297,6 +298,7 @@ window.browser.runtime.onMessage.addListener(async function(msg,sender,sendRespo
         /**new website */
         else if(oldTabName != tabName && firstCheck ==0){
             implicationCounter = implicationCounter+1;
+            localStorage.setItem('ImplicationCounter', implicationCounter);
             oldTabName=tabName;
             firstCheck = 1;
             if(localStorage.getItem('Localtitle')!="" && localStorage.getItem('LocalFirstText')!="" && localStorage.getItem('LocalSecondText')!="" && localStorage.getItem('Localtitle') && localStorage.getItem('LocalFirstText') && localStorage.getItem('LocalSecondText')){
@@ -396,12 +398,12 @@ function checkPasswordLength(pw_lngt){
             diaryAnswer = 1;      
 
             /**if all passwords have the same length its no reuse - maybe passwordgenerator used*/
-            if(passwordlength_counter == passwordLength_website-10 && passwordlength_counter > 1){
+            if(passwordlength_counter == passwordLength_website-11 && passwordlength_counter > 1){
                 passwordlength_counter=0;
                 passwordLength_website=0;
             }
-            var length_sum = ((passwordLength_website-10) + passwordlength_counter);
-            var rel_frequ_website = (passwordLength_website-10) / length_sum;
+            var length_sum = ((passwordLength_website-11) + passwordlength_counter);
+            var rel_frequ_website = (passwordLength_website-11) / length_sum;
             var rel_frequ_counter = passwordlength_counter / length_sum;
             if(rel_frequ_counter>= 0.5 && rel_frequ_counter!=1){
                 localPasswordReuse = 1;  
@@ -415,13 +417,13 @@ function checkPasswordLength(pw_lngt){
         }
     }
     if(diaryAnswer==0){
-        if(passwordlength_counter == passwordLength_website-9 && passwordlength_counter != 1 && passwordlength_counter !=0){
+        if(passwordlength_counter == passwordLength_website-10 && passwordlength_counter != 1 && passwordlength_counter !=0){
             localPasswordReuse = 1;
             passwordlength_counter=0;
             passwordLength_website=0;
         }
-        var length_sum = ((passwordLength_website-9) + passwordlength_counter);
-        var rel_frequ_website = (passwordLength_website-9) / length_sum;
+        var length_sum = ((passwordLength_website-10) + passwordlength_counter);
+        var rel_frequ_website = (passwordLength_website-10) / length_sum;
         var rel_frequ_counter = passwordlength_counter / length_sum;
 
         if(rel_frequ_counter>= 0.5){
@@ -523,6 +525,7 @@ function keystrokeCheck(){
             window.browser.tabs.query({active: true, currentWindow: true}, function(tabs) {
                 if(implicationCounter == 10){
                     implicationCounter = 0;
+                    localStorage.setItem('ImplicationCounter', implicationCounter);
                     window.browser.tabs.query({active: true, currentWindow: true}, function(tabs) {
                         window.browser.tabs.sendMessage(tabs[0].id, {
                             message: "showDiary", 
